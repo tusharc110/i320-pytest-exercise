@@ -24,3 +24,11 @@ def test_raises_error_on_badly_formatted_phone_inputs():
 
   with pytest.raises(ValueError):
     fix_phone_num("(3213) 654 3333")
+
+
+def test_raises_value_error_on_non_digit_inputs():
+  with pytest.raises(ValueError):
+    fix_phone_num("334dfdee45")
+
+  with pytest.raises(ValueError):
+    fix_phone_num("abcdefghij")
